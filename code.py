@@ -83,7 +83,78 @@ def running():
         if keys[pygame.K_j]:
             slide_f_l()
 
-        screen.fill((255, 255, 255))
+        screen.fill((255, 172, 0))
+            
+        pygame.draw.rect(screen, (71, 74, 81), (0, 320, 100, 50), 10)
+        pygame.draw.rect(screen, (71, 74, 81), (110, 320, 100, 50), 10)
+        pygame.draw.rect(screen, (71, 74, 81), (220, 320, 100, 50), 10)
+        pygame.draw.rect(screen, (71, 74, 81), (330, 320, 100, 50), 10)
+        pygame.draw.rect(screen, (71, 74, 81), (440, 320, 100, 50), 10)
+        pygame.draw.rect(screen, (71, 74, 81), (550, 320, 100, 50), 10)
+        pygame.draw.rect(screen, (71, 74, 81), (660, 320, 100, 50), 10)
+        pygame.draw.rect(screen, (71, 74, 81), (770, 320, 100, 50), 10)
+            
+        pygame.draw.rect(screen, (205, 50, 50), (180, 120, 40, 230))        
+        pygame.draw.rect(screen, (205, 50, 50), (width - 180, 120, -40, 230))
+        pygame.draw.rect(screen, (201, 175, 40), (170, 120, 60, 20))
+        pygame.draw.rect(screen, (201, 175, 40), (170, 350, 60, -20))
+        pygame.draw.rect(screen, (201, 175, 40), (175, 150, 50, 25))
+        pygame.draw.rect(screen, (201, 175, 40), (175, 320, 50, -25))
+        pygame.draw.rect(screen, (201, 175, 40), (width - 170, 120, -60, 20))
+        pygame.draw.rect(screen, (201, 175, 40), (width - 170, 350, -60, -20))
+        pygame.draw.rect(screen, (201, 175, 40), (width - 175, 150, -50, 25))
+        pygame.draw.rect(screen, (201, 175, 40), (width - 175, 320, -50, -25))        
+            
+        pygame.draw.rect(screen, (0, 0, 0), (0, 0, width, 30), 6)
+        pygame.draw.polygon(screen, (0, 0, 0), [(80, 0), (140, 120), (160, 120), (100, 0)], 6)
+        pygame.draw.rect(screen, (0, 0, 0), (140, 120, 120, - 20), 6)
+        pygame.draw.polygon(screen, (0, 0, 0), [(320, 0), (260, 120), (240, 120), (300, 0)], 6)
+        pygame.draw.polygon(screen, (0, 0, 0), [(width - 80, 0), (width - 140, 120), (width - 160, 120), (width - 100, 0)], 6)
+        pygame.draw.rect(screen, (0, 0, 0), (width - 140, 120, -120, -20), 6)
+        pygame.draw.polygon(screen, (0, 0, 0), [(width - 320, 0), (width - 260, 120), (width - 240, 120), (width - 300, 0)], 6)           
+            
+        pygame.draw.rect(screen, (205, 50, 50), (0, 0, width, 30))
+        pygame.draw.polygon(screen, (205, 50, 50), [(80, 0), (140, 120), (160, 120), (100, 0)])
+        pygame.draw.rect(screen, (205, 50, 50), (140, 120, 120, - 20))
+        pygame.draw.polygon(screen, (205, 50, 50), [(320, 0), (260, 120), (240, 120), (300, 0)])
+        pygame.draw.polygon(screen, (205, 50, 50), [(width - 80, 0), (width - 140, 120), (width - 160, 120), (width - 100, 0)])
+        pygame.draw.rect(screen, (205, 50, 50), (width - 140, 120, -120, -20))
+        pygame.draw.polygon(screen, (205, 50, 50), [(width - 320, 0), (width - 260, 120), (width - 240, 120), (width - 300, 0)])                    
+            
+        pygame.draw.rect(screen, (66, 69, 76), (0, height, width, -150))
+        pygame.draw.rect(screen, (71, 74, 81), (0, height - 150, width, -100))
+        pygame.draw.circle(screen, (255, 255, 73), (300, 200), 50, 0)
+            
+        pygame.draw.polygon(screen, (71, 74, 81), [(100, 0), (150, 100), (250, 100), (300, 0)])
+        pygame.draw.polygon(screen, (71, 74, 81), [(width - 100, 0), (width - 150, 100), (width - 250, 100), (width - 300, 0)])
+        pygame.draw.circle(screen, (66, 69, 76), (200, 50), 30)
+        pygame.draw.circle(screen, (66, 69, 76), (width - 200, 50), 30)
+        pygame.draw.line(screen, (250, 250, 250), (180, 30), (220, 70), 4)
+        pygame.draw.line(screen, (250, 250, 250), (180, 70), (220, 30), 4)
+        pygame.draw.line(screen, (250, 250, 250), (width - 180, 30), (width - 220, 70), 4)
+        pygame.draw.line(screen, (250, 250, 250), (width - 180, 70), (width - 220, 30), 4)    
+        pygame.draw.line(screen, (250, 250, 250), (180, 30), (220, 30), 4)
+        pygame.draw.line(screen, (250, 250, 250), (180, 70), (220, 70), 4)
+        pygame.draw.line(screen, (250, 250, 250), (width - 180, 30), (width - 220, 30), 4)
+        pygame.draw.line(screen, (250, 250, 250), (width - 180, 70), (width - 220, 70), 4)    
+        pygame.draw.line(screen, (250, 250, 250), (220, 30), (220, 70), 4)
+        pygame.draw.line(screen, (250, 250, 250), (180, 70), (180, 30), 4)
+        pygame.draw.line(screen, (250, 250, 250), (width - 180, 30), (width - 180, 70), 4)
+        pygame.draw.line(screen, (250, 250, 250), (width - 220, 70), (width - 220, 30), 4)            
+            
+        pygame.draw.rect(screen, (86, 89, 96), (300, height - 150, width - 600,  -120))
+        pygame.draw.circle(screen, (66, 69, 76), (width//2, height - 210), 40)
+        pygame.draw.line(screen, (250, 250, 250), (width//2 - 20, height - 230), (width//2 + 20, height - 190), 6)
+        pygame.draw.line(screen, (250, 250, 250), (width//2 - 20, height - 190), (width//2 + 20, height - 230), 6)
+        pygame.draw.line(screen, (250, 250, 250), (width//2 - 20, height - 230), (width//2 + 20, height - 230), 5)
+        pygame.draw.line(screen, (250, 250, 250), (width//2 - 20, height - 190), (width//2 + 20, height - 190), 5)
+        pygame.draw.line(screen, (250, 250, 250), (width//2 - 20, height - 230), (width//2 - 20, height - 190), 5)
+        pygame.draw.line(screen, (250, 250, 250), (width//2 + 20, height - 190), (width//2 + 20, height - 230), 5)        
+        pygame.draw.polygon(screen, (81, 84, 91), [(70, height-130), (80, height-270), (120, height-270), (130, height-130)])
+        pygame.draw.polygon(screen, (81, 84, 91), [(width - 70, height-130), (width - 80, height-270), (width - 120, height-270), (width - 130, height-130)])
+        pygame.draw.polygon(screen, (81, 84, 91), [(270, height-130), (280, height-290), (320, height-290), (330, height-130)])
+        pygame.draw.polygon(screen, (81, 84, 91), [(width - 270, height-130), (width - 280, height-290), (width - 320, height-290), (width - 330, height-130)])        
+        
         pygame.draw.rect(screen, (0, 255, 100), (width, height // 2, width, height))
 
         pygame.draw.rect(screen, (255, 100, 255),
@@ -109,7 +180,7 @@ def running():
                              (g_x - 24, g_y + (g_h // 2) - 15, -30, 8))
             shoot_l()
 
-        pygame.draw.circle(screen, (100, 100, 60), (b_x, b_y), b_r)
+        pygame.draw.circle(screen, (0, 0, 250), (b_x, b_y), b_r)
         pygame.draw.rect(screen, f_clr[-f_hp], (f_x, f_y, f_w, f_h))
 
         if f_hp == 1 and g:
@@ -204,5 +275,4 @@ def shoot_l():
 
 
 running()
-
 
