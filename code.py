@@ -1,4 +1,5 @@
 import pygame
+import time
 
 pygame.init()
 
@@ -24,6 +25,7 @@ b_r = 3
 s = False
 bul = 0
 clock = pygame.time.Clock()
+end_game = False
 
 font = pygame.font.Font(None, 50)
 text = font.render("WASTED", 1, (255, 100, 100))
@@ -47,7 +49,7 @@ screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption('Block')
 
 def running():
-    global is_jump, is_jumpy
+    global is_jump, is_jumpy, end_game
     game = True
 
     while game:
@@ -183,14 +185,19 @@ def running():
         pygame.draw.circle(screen, (0, 0, 250), (b_x, b_y), b_r)
         pygame.draw.rect(screen, f_clr[-f_hp], (f_x, f_y, f_w, f_h))
 
-        if f_hp == 1 and g:
+        if f_hp == 1 and g and not end_game:
             screen.fill((255, 255, 255))
             screen.blit(text, (text_x, text_y))
-        elif bul >= 30 and g:
+            end_game = True
+            pygame.display.update()
+        elif bul >= 30 and g and not end_game:
             screen.fill((255, 255, 255))
             screen.blit(text1, (text1_x, text_y))
-
-        pygame.display.update()
+            end_game = True
+            pygame.display.update()
+            
+        if not end_game:
+            pygame.display.update()
         clock.tick(60)
 
 def jump():
