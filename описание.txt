@@ -1,0 +1,65 @@
+1. Open Pose [https://github.com/CMU-Perceptual-Computing-Lab/openpose]
+OpenPose представляет собой первую систему для нескольких человек в режиме реального времени, которая совместно определяет ключевые точки человеческого тела, кисти, лица и ступней (всего 135 ключевых точек) на отдельных изображениях.
+
+Авторы [Джинес Идальго, Чже Цао, Томас Симон, Ши-Эн Вэй, Ханбюль Джу и Язер Шейх]
+
+``Функциональные возможности:``
+	* ``2D обнаружение ключевых точек в режиме реального времени:``
+		* Оценка 15/18 или ``25-балльной точки тела / стопа. Время выполнения не зависит от количества обнаруженных людей.``
+		* ``Оценка 6-балльной точки стопы.`` Интегрируется вместе с 25-клавишным детектором тела / ножки.
+		* ``Оценка ключевой точки рукой 2x21.`` В настоящее время время работы зависит от количества обнаруженных людей.
+		* ``70-балльная оценка лица.`` В настоящее время время работы зависит от количества обнаруженных людей.
+	* ``Трехмерное обнаружение ключевых точек в режиме реального времени:``
+		* Трехмерная триангуляция из нескольких отдельных видов.
+		* Синхронизация камер Flir выполнена.
+		* Совместим с камерами Flir / Point Grey, но предоставляет демонстрационные версии C ++ для добавления пользовательских настроек.
+	* ``Калибровка инструментов``:
+		* Простая оценка искажений, внутренних и внешних параметров камеры.
+	* ``Отслеживание одного человека`` для дальнейшего ускорения или визуального сглаживания.
+``Вход:`` изображение, видео, веб-камера, Flir / Point Grey и IP-камера. Включены демонстрационные версии C ++ для добавления вашего пользовательского ввода.
+``Вывод:`` базовое изображение + отображение / сохранение ключевых точек (PNG, JPG, AVI, ...), сохранение ключевых точек (JSON, XML, YML, ...) и / или ключевые точки в качестве класса массива.
+``ОС:`` Ubuntu (14, 16), Windows (8, 10), Mac OSX, Nvidia TX2.
+``Обучение и наборы данных:``
+	* Обучение OpenPose.[https://github.com/CMU-Perceptual-Computing-Lab/openpose_train]
+	* Веб-сайт набора ключевых данных ног.[https://cmu-perceptual-computing-lab.github.io/foot_keypoint_dataset/]
+``Другие:``
+	* Доступно: демонстрация командной строки, оболочка C ++ и API C ++.
+	* Python API.[https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/modules/python_module.md]
+	* Unity Плагин.[https://github.com/CMU-Perceptual-Computing-Lab/openpose_unity_plugin]
+	* Версии CUDA (Nvidia GPU), OpenCL (AMD GPU) и только для CPU (без GPU).
+``Полученные результаты``
+	* Оценка тела и стопы[https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/media/dance_foot.gif]
+	* Модуль трехмерной реконструкции(тело, нога, лицо и руки)[https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/media/openpose3d.gif]
+	* Оценка тела, ступни, лица и рук[https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/media/pose_face.gif][https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/media/pose_hands.gif]
+	* Unity Плагин[https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/media/unity_main.png][https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/media/unity_body_foot.png][https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/media/unity_hand_face.png]
+``Анализ времени выполнения``
+	Сравнение времени вывода между 3 доступными библиотеками оценки позы: OpenPose, Alpha-Pose (быстрая версия Pytorch) и Mask R-CNN:[https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/media/openpose_vs_competition.png]
+	Этот анализ был выполнен с использованием одинаковых изображений для каждого алгоритма и размера партии 1. Каждый анализ повторялся 1000 раз, а затем усреднялся. Все это было выполнено в системе с Nvidia 1080 Ti и CUDA 8. Репозитории Megvii (Face ++) и MSRA GitHub были исключены, поскольку они предоставляют только результаты оценки позы, полученные подрезанным человеком. Тем не менее, они страдают от той же проблемы, что и Alpha-Pose и Mask R-CNN, их время выполнения линейно растет с количеством людей.
+
+AlphaPose[https://github.com/MVIG-SJTU/AlphaPose]
+Alpha Pose является точной оценкой позы для нескольких человек, которая является первой системой с открытым исходным кодом в режиме реального времени.
+Для соответствия позы, которые соответствуют одному и тому же человеку во всех кадрах, мы также предоставляем эффективный онлайн-трекер позы под названием Pose Flow.
+
+Авторы [Хао-шу Фан, Цзефэн Ли, Юлиан Сю, Руихенг Чанг, Шуцинь Се, Ю-Винг Тай и Кью Лу]
+
+``Используемый язык программирования:``
+	* Python
+``Различные версии:``
+	* Основная версия
+	* MXNet
+	* CrowdPose
+	* Pytorch
+``Полученные результаты:``
+	* Определение частей тела человека[https://github.com/MVIG-SJTU/AlphaPose/blob/master/doc/pose.gif]
+	* Отслеживание его перемещения[https://github.com/MVIG-SJTU/AlphaPose/blob/master/doc/posetrack.gif]
+	* Идентификация положения множества людей[https://github.com/MVIG-SJTU/AlphaPose/blob/master/doc/crowdpose.gif]
+
+
+Основными отличиями между OpenPose и AlphaPose являются:
+	* Различные используемые библиотеки и программное обеспечение:
+		OpenPose написан на C++ и может использоваться как плагин для Unity.
+		AlphaPose написан исключительно на языке программирования Python и имеет различные версии включающиеся в себя множество разных библиотек.
+	* Скорость обработки данных:
+		Так как операции в C++ выполняются быстрее чем в Python, то скорость обработки входящих данных намного быстрее, чем в AlphaPose.
+	* 
+AlphaPose и OpenPose находятся в свободном доступе для некоммерческого использования и может распространяться при условиях сайта github.com[https://help.github.com/en/github/site-policy/github-terms-of-service]
